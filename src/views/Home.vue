@@ -1,18 +1,55 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+<div class="home container text-center">
+  <div class="boxL">
+    <inputC/><!-- เติมเงิน -->
   </div>
+
+  <div class="boxR">
+    <typeWM/><!-- เลือกประเภทเครื่องซักผ้า -->
+  </div>
+
+</div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import inputC from "@/components/inputC.vue"
+import typeWM from '@/components/typeWM.vue'
+import countdown from '@/components/countdown.vue'
 
 export default {
-  name: 'home',
-  components: {
-    HelloWorld
+  name: "Home",
+  components:{
+    inputC,
+    typeWM,
+    countdown
   }
 }
 </script>
+
+<style>
+.home {
+  display: flex;
+  justify-content:space-between;
+  width: 100vw;
+  height: 100vh;
+  align-items: center;
+  
+}
+.boxL{
+  /* width: 50vw; */
+}
+.boxR{
+  /* width: 50vw; */
+}
+@media only screen and (max-width: 768px) {
+  .home {
+    display: flex;
+    justify-content:space-between;
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    flex-direction: column;
+    
+  }
+}
+</style>
